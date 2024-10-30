@@ -1,0 +1,26 @@
+<form [formGroup]="formUser">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Pseudo</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formUser.controls['pseudo'])" formControlName="pseudo" class="form-control" id="exampleFormControlInput1">
+        <!-- <span class="text-danger" *ngIf="isInvalidInput(formUser.controls['birthday'])" >
+            <ng-container *ngIf="formUser.controls['birthday'].hasError('required')">
+                Ce champs est requis
+            </ng-container>
+        </span> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formUser.controls['password'])" formControlName="password" class="form-control" id="exampleFormControlInput1" placeholder="">
+        <!-- <span class="text-danger" *ngIf="isInvalidInput(formUser.controls['firstName'])" >
+            <ng-container *ngIf="formUser.controls['firstName'].hasError('required')">
+                Ce champs est requis
+            </ng-container>
+            <ng-container *ngIf="formUser.controls['firstName'].hasError('minlength')">
+                minimum 10 caractères
+            </ng-container>
+        </span> -->
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Enregistrer</button>
+    </div>
+</form>

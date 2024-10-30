@@ -1,0 +1,57 @@
+<form [formGroup]="formTeacher" >
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Birthday</label>
+        <input type="date" [class.is-invalid]="isInvalidInput(formTeacher.controls['birthday'])" formControlName="birthday" class="form-control" id="exampleFormControlInput1">
+        <span class="text-danger" *ngIf="isInvalidInput(formTeacher.controls['birthday'])" >
+            <ng-container *ngIf="formTeacher.controls['birthday'].hasError('required')">
+                Ce champs est requis
+            </ng-container>
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">first Name</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['firstName'])" formControlName="firstName" class="form-control" id="exampleFormControlInput1" placeholder="">
+        <span class="text-danger" *ngIf="isInvalidInput(formTeacher.controls['firstName'])" >
+            <ng-container *ngIf="formTeacher.controls['firstName'].hasError('required')">
+                Ce champs est requis
+            </ng-container>
+            <ng-container *ngIf="formTeacher.controls['firstName'].hasError('minlength')">
+                minimum 10 caractères
+            </ng-container>
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['lastName'])" formControlName="lastName" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['lastName'])" formControlName="phoneNumber" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Url Picture</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['urlPicture'])" formControlName="urlPicture" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Gender</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['gender'])" formControlName="gender" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Matricule</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['matricule'])" formControlName="matricule" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone Number Father</label>
+        <input type="text" [class.is-invalid]="isInvalidInput(formTeacher.controls['phoneNumberFather'])" formControlName="phoneNumberFather" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Enregistrer</button>
+    </div>
+</form>
+
+
+
+
+
+
+
